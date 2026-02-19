@@ -17,6 +17,8 @@ Through this project, I aim to:
 
 This project is structured and documented incrementally to reflect a real SOC deployment lifecycle — from infrastructure setup to detection engineering and incident response analysis.
 
+---
+
 ## 2. Lab Objectives
 
 The lab is designed to replicate core functions of a basic Security Operations Center within a controlled virtual environment.
@@ -32,6 +34,8 @@ The key objectives of this setup are:
 * Document findings in a structured and professional format
 
 The long-term goal is to build practical blue team experience by moving beyond theoretical concepts into hands-on monitoring and incident analysis.
+
+---
 
 ## 3. Lab Architecture
 
@@ -54,5 +58,30 @@ This architecture ensures:
 * Controlled attack simulation
 * Clear separation of roles (attacker vs defender)
 * Realistic detection workflow
+
+## Network Configuration
+
+All virtual machines in this SOC Home Lab are configured to use **NAT networking mode** within the hypervisor. This ensures that each VM resides within the same internal virtual subnet while still having internet access through the host machine.
+
+For this lab, the internal subnet is configured as:
+
+```
+192.168.1.0/24
+```
+
+This means:
+
+• All VMs receive IP addresses within the range 192.168.1.1 – 192.168.1.254
+• The subnet mask is 255.255.255.0
+• The VMs can communicate directly with each other
+• External internet access is routed through the host system
+
+Using a shared subnet is critical for a SOC lab environment because:
+
+• The attacker machine (Kali Linux) must be able to reach the target systems
+• The target machines must forward logs to the SIEM server
+• The SIEM components (Wazuh + Elastic Stack) must communicate internally without network segmentation issues
+
+This configuration simulates a small enterprise internal LAN environment, making it ideal for attack simulation, log collection, and detection testing.
 
 
