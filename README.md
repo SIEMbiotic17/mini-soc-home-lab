@@ -1,5 +1,13 @@
 # SOC Home Lab
 
+## Table of Contents
+1. [Project Overview](#1-project-overview)
+2. [Lab Objectives](#2-lab-objectives)
+3. [Lab Architecture](#3-lab-architecture)
+4. [Network Configuration](#network-configuration)
+5. [Lab Environment Configuration](#lab-environment-configuration)
+
+
 ## 1. Project Overview
 
 This repository documents the design and implementation of a personal Security Operations Center (SOC) home lab built to simulate real-world blue team monitoring and detection workflows.
@@ -52,6 +60,14 @@ The Ubuntu Server acts as the core SOC system where SIEM and IDS components will
 
 <img src="screenshots/ubuntu/Architecture_Flow.png" width="650">
 
+| Tool          | Purpose                      |
+| ------------- | ---------------------------- |
+| Kali Linux    | Attack simulation            |
+| Ubuntu Server | SOC node/log collection    |
+| Wazuh         | SIEM / detection             |
+| Elastic Stack | Log indexing & visualization |
+
+
 This architecture ensures:
 
 * Safe experimentation without affecting the external network
@@ -65,7 +81,7 @@ All virtual machines in this SOC Home Lab are configured to use **NAT networking
 
 For this lab, the internal subnet is configured as:
 
-<img src="screenshots/ubuntu/nat_config.png" width="500">
+<img src="screenshots/ubuntu/nat_config.png" width="600">
 
 This means:
 * All VMs receive IP addresses within the range 192.168.1.1 – 192.168.1.254
@@ -73,15 +89,13 @@ This means:
 * The VMs can communicate directly with each other
 * External internet access is routed through the host system
 
-Using a shared subnet is critical for a SOC lab environment because:
+Using a shared subnet is critical for a SOC lab environment to ensure:
 
-* The attacker machine (Kali Linux) must be able to reach the target systems
+* The attacker machine (**Kali Linux**) must be able to reach the target systems
 * The target machines must forward logs to the SIEM server
-* The SIEM components (Wazuh + Elastic Stack) must communicate internally without network segmentation issues
+* The SIEM components (**Wazuh** + **Elastic Stack**) must communicate internally
 
 This configuration simulates a small enterprise internal LAN environment, making it ideal for attack simulation, log collection, and detection testing.
-
----
 
 ## Lab Environment Configuration
 
@@ -108,12 +122,14 @@ Ubuntu Server was selected due to:
 
 The Ubuntu Server VM is configured with the following resources:
 
-* Memory: 4 GB RAM
-* CPU: 2 cores
-* Storage: 40 GB disk
-* Network Adapter: VMnet8 (NAT mode)
+| Resource | Allocation   |
+| -------- | ------------ |
+| RAM      | 4 GB         |
+| CPU      | 2 cores      |
+| Disk     | 40 GB        |
+| Network  | VMnet8 (NAT) |
 
-<img src="screenshots/ubuntu/vm_settings.png" width="600">
+<img src="screenshots/ubuntu/vm_settings.png" width="700">
 
 ### Disk Allocation (While Server Installation)
 
