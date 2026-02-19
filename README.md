@@ -1,16 +1,18 @@
-SOC Home Lab
-1. Project Overview
+# SOC Home Lab
 
-This project documents the design and implementation of a lightweight Security Operations Center (SOC) home lab built using virtualization. The objective is to simulate real-world blue team monitoring by integrating a SIEM platform and network intrusion detection system within an isolated lab environment.
+## 1. Project Overview
 
-The lab is designed to:
+This repository documents the design and implementation of a personal Security Operations Center (SOC) home lab built to simulate real-world blue team monitoring and detection workflows.
 
-Collect and analyze system and network logs
+The primary goal of this project is to gain hands-on experience with log analysis, threat detection, and incident investigation by deploying a SIEM platform and a network intrusion detection system inside an isolated virtualized environment.
 
-Detect malicious activity such as port scans and brute-force attempts
+The lab is intentionally designed to run on limited hardware (8GB RAM, dual-core CPU), requiring careful resource allocation and architectural decisions to maintain performance while preserving realism.
 
-Map detections to MITRE ATT&CK techniques
+Through this project, I aim to:
 
-Simulate attacker behavior in a controlled environment
+* Build practical experience with SIEM and IDS deployment
+* Generate and analyze security events in a controlled lab
+* Simulate attacker techniques and observe detection behavior
+* Understand how alerts map to real-world attack patterns
 
-The environment is optimized to run on limited hardware resources (8GB RAM, dual-core CPU), requiring careful system design and resource allocation.
+This project is structured and documented incrementally to reflect a real SOC deployment lifecycle — from infrastructure setup to detection engineering and incident response analysis.
