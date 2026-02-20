@@ -251,7 +251,7 @@ curl -O https://packages.wazuh.com/4.14/wazuh-install.sh
 
 This script automates the deployment of all required Wazuh components.
 
-<img src="screenshots/Wazuh/wazuh_script.png" width="700">
+<img src="screenshots/wazuh/wazuh_script.png" width="700">
 
 ---
 
@@ -272,7 +272,7 @@ The installation process:
 * Installed Filebeat
 * Configured Wazuh Dashboard
 
-<img src="screenshots/Wazuh/wazuh_install_start.png" width="700">
+<img src="screenshots/wazuh/wazuh_install_start.png" width="700">
 
 ---
 
@@ -282,7 +282,7 @@ Upon successful installation, the script generated default dashboard credentials
 
 These credentials allow authentication to the Wazuh Dashboard.
 
-<img src="screenshots/Wazuh/wazuh_dashboard_credentials.png" width="700">
+<img src="screenshots/wazuh/wazuh_dashboard_credentials.png" width="700">
 
 ---
 
@@ -305,7 +305,7 @@ All services returned:
 active (running)
 ```
 
-<img src="screenshots/Wazuh/wazuh_services_running.png" width="700">
+<img src="screenshots/wazuh/wazuh_services_running.png" width="700">
 
 ---
 
@@ -321,7 +321,7 @@ sudo ufw allow 443/tcp
 
 This ensures secure browser-based access to the Wazuh Dashboard.
 
-<img src="screenshots/Wazuh/wazuh_port443_open.png" width="700">
+<img src="screenshots/wazuh/wazuh_port443_open.png" width="700">
 
 ---
 
@@ -343,11 +343,11 @@ Successful login confirmed:
 
 ### Login Page
 
-<img src="screenshots/Wazuh/wazuh_dashboard_login.png" width="700">
+<img src="screenshots/wazuh/wazuh_dashboard_login.png" width="700">
 
 ### Dashboard Home
 
-<img src="screenshots/Wazuh/wazuh_dashboard_home.png" width="700">
+<img src="screenshots/wazuh/wazuh_dashboard_home.png" width="700">
 
 ---
 
